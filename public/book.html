@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book an appointment with a doctor on HealthConnect. Select a date and time for your consultation.">
+  <title>Book Appointment — HealthConnect</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#6C5CE7"/><path d="M18 8v20M8 18h20" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+        HealthConnect
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/symptoms.html">Symptom Checker</a>
+        <a href="/doctors.html">Find Doctors</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <a href="/doctors.html" class="btn-nav">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="booking-page">
+    <div class="container">
+      <a href="javascript:history.back()" class="back-link">← Back</a>
+
+      <!-- Step Wizard -->
+      <div class="step-wizard" id="bookingWizard">
+        <div class="step active" id="bStep1"><span class="step-num">1</span> Select Doctor</div>
+        <div class="step-line" id="bLine1"></div>
+        <div class="step" id="bStep2"><span class="step-num">2</span> Fill Details</div>
+        <div class="step-line" id="bLine2"></div>
+        <div class="step" id="bStep3"><span class="step-num">3</span> Confirm</div>
+      </div>
+
+      <div class="page-title">
+        <h1>📅 Book Appointment</h1>
+        <p>Fill in your details and select a convenient time slot.</p>
+      </div>
+
+      <div id="bookingContent">
+        <div class="loading-container">
+          <div class="spinner"></div>
+          <span>Loading doctor info...</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal">
+      <div class="modal-icon">✓</div>
+      <h2>Appointment Confirmed!</h2>
+      <p id="confirmMessage">Your appointment has been booked successfully.</p>
+      <a href="/dashboard.html" class="btn btn-primary">View Dashboard</a>
+      <a href="/" class="btn btn-secondary" style="margin-left:8px;">Home</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 HealthConnect. Built with ❤️ for better healthcare access.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/book.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and find doctors by city and specialization on HealthConnect.">
+  <title>Find Doctors — HealthConnect</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#6C5CE7"/><path d="M18 8v20M8 18h20" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+        HealthConnect
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/symptoms.html">Symptom Checker</a>
+        <a href="/doctors.html" class="active">Find Doctors</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <a href="/doctors.html" class="btn-nav">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Doctor Directory -->
+  <section class="directory">
+    <div class="container">
+      <div class="page-title">
+        <h1>👨‍⚕️ Doctor Directory</h1>
+        <p>Find the right specialist near you. Filter by city or specialization.</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters" id="filters">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="Search doctors by name...">
+        </div>
+        <select class="filter-select" id="cityFilter">
+          <option value="">All Cities</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Hyderabad">Hyderabad</option>
+        </select>
+        <select class="filter-select" id="specFilter">
+          <option value="">All Specializations</option>
+          <option value="General Physician">General Physician</option>
+          <option value="Cardiologist">Cardiologist</option>
+          <option value="Dermatologist">Dermatologist</option>
+          <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+          <option value="Pediatrician">Pediatrician</option>
+          <option value="ENT Specialist">ENT Specialist</option>
+          <option value="Neurologist">Neurologist</option>
+          <option value="Psychiatrist">Psychiatrist</option>
+          <option value="Gynecologist">Gynecologist</option>
+        </select>
+        <select class="sort-select" id="sortSelect">
+          <option value="">Sort By</option>
+          <option value="experience">Experience ↓</option>
+          <option value="fee-low">Fee: Low → High</option>
+          <option value="fee-high">Fee: High → Low</option>
+          <option value="name">Name A-Z</option>
+        </select>
+        <div class="view-toggle" id="viewToggle">
+          <button class="active" data-view="grid" title="Grid view">▦</button>
+          <button data-view="list" title="List view">☰</button>
+        </div>
+      </div>
+
+      <!-- Results count -->
+      <p id="resultCount" style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;"></p>
+
+      <!-- Doctor Grid -->
+      <div class="doctor-grid" id="doctorGrid">
+        <div class="skeleton skeleton-card"></div>
+        <div class="skeleton skeleton-card"></div>
+        <div class="skeleton skeleton-card"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 HealthConnect. Built with ❤️ for better healthcare access.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/doctors.js"></script>
+</body>
+</html>

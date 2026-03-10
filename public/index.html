@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HealthConnect — Smart healthcare platform connecting patients with the right doctors. Find specialists, check symptoms, and book appointments.">
+  <title>HealthConnect — Smart Doctor Discovery & Booking</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="36" height="36" rx="10" fill="#6C5CE7"/>
+          <path d="M18 8v20M8 18h20" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+        </svg>
+        HealthConnect
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="active">Home</a>
+        <a href="/symptoms.html">Symptom Checker</a>
+        <a href="/doctors.html">Find Doctors</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <a href="/doctors.html" class="btn-nav">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-particles" id="heroParticles"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Find the Right Doctor, Right Away</h1>
+          <p>Don't know which specialist to visit? HealthConnect intelligently matches your symptoms to the right doctor — so you get care faster.</p>
+          <div class="hero-cta">
+            <a href="/symptoms.html" class="btn btn-primary btn-lg">🔍 Check Symptoms</a>
+            <a href="/doctors.html" class="btn btn-secondary btn-lg">👨‍⚕️ Browse Doctors</a>
+          </div>
+          <div class="hero-search">
+            <input type="text" id="heroSearchInput" placeholder="Describe your symptoms (e.g. headache, fever)...">
+            <button id="heroSearchBtn">Search</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <h3 style="font-size:1.1rem; margin-bottom: 4px;">Your Health Dashboard</h3>
+            <p style="color:var(--text-muted); font-size:0.85rem;">Trusted by patients across India</p>
+            <div class="stat-grid">
+              <div class="stat-item">
+                <div class="stat-number" data-count="15">0</div>
+                <div class="stat-label">Expert Doctors</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label">Cities</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="8">0</div>
+                <div class="stat-label">Specializations</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number" data-count="24">0</div>
+                <div class="stat-label">Online Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge">How It Works</span>
+        <h2>Healthcare Made Simple</h2>
+        <p>Three easy steps to get the right care from the right specialist.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <span class="feature-step">1</span>
+          <div class="feature-icon blue">🩺</div>
+          <h3>Describe Symptoms</h3>
+          <p>Tell us what you're feeling. Our smart system analyzes your symptoms to recommend the right type of specialist.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-step">2</span>
+          <div class="feature-icon teal">👨‍⚕️</div>
+          <h3>Find Your Doctor</h3>
+          <p>Browse our curated directory of verified doctors. Filter by city, specialization, and availability.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-step">3</span>
+          <div class="feature-icon green">📅</div>
+          <h3>Book Appointment</h3>
+          <p>Choose a convenient date and time. Get instant confirmation and all the details you need for your visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Doctors Preview -->
+  <section class="features" id="topDoctors" style="background: var(--bg);">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge">Top Rated</span>
+        <h2>Featured Doctors</h2>
+        <p>Experienced specialists ready to help across India's top cities.</p>
+      </div>
+      <div class="doctor-grid" id="featuredDoctorsGrid">
+        <div class="loading-container">
+          <div class="spinner"></div>
+          <span>Loading doctors...</span>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:40px;" class="fade-in">
+        <a href="/doctors.html" class="btn btn-primary">View All Doctors →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="features" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-badge">Testimonials</span>
+        <h2>What Our Users Say</h2>
+        <p>Real experiences from patients who found the right care.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-in" style="border-left: 3px solid var(--primary);">
+          <p style="font-style:italic;color:var(--text-light);margin-bottom:16px;">"HealthConnect helped me find a cardiologist within minutes. The symptom checker is incredibly accurate!"</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">R</div>
+            <div><strong>Rahul S.</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Mumbai</span></div>
+          </div>
+        </div>
+        <div class="feature-card fade-in" style="border-left: 3px solid var(--accent);">
+          <p style="font-style:italic;color:var(--text-light);margin-bottom:16px;">"Booking was seamless. I loved how easy it was to compare doctors and pick the right one for my needs."</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient-accent);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">P</div>
+            <div><strong>Priya M.</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Bangalore</span></div>
+          </div>
+        </div>
+        <div class="feature-card fade-in" style="border-left: 3px solid var(--accent-warm);">
+          <p style="font-style:italic;color:var(--text-light);margin-bottom:16px;">"As a doctor, the dashboard makes managing appointments effortless. Great platform for patients and doctors alike."</p>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient-warm);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;">D</div>
+            <div><strong>Dr. Anil K.</strong><br><span style="font-size:0.8rem;color:var(--text-muted);">Delhi</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>🏥 HealthConnect</h3>
+          <p>Smart healthcare navigation for modern India. Connecting patients with the right specialists, powered by intelligent symptom analysis.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Platform</h4>
+          <a href="/symptoms.html">Symptom Checker</a>
+          <a href="/doctors.html">Find Doctors</a>
+          <a href="/dashboard.html">Doctor Dashboard</a>
+        </div>
+        <div class="footer-column">
+          <h4>Specializations</h4>
+          <a href="/doctors.html?specialization=Cardiologist">Cardiologist</a>
+          <a href="/doctors.html?specialization=Dermatologist">Dermatologist</a>
+          <a href="/doctors.html?specialization=Neurologist">Neurologist</a>
+          <a href="/doctors.html?specialization=Pediatrician">Pediatrician</a>
+        </div>
+        <div class="footer-column">
+          <h4>Cities</h4>
+          <a href="/doctors.html?city=Mumbai">Mumbai</a>
+          <a href="/doctors.html?city=Delhi">Delhi</a>
+          <a href="/doctors.html?city=Bangalore">Bangalore</a>
+          <a href="/doctors.html?city=Chennai">Chennai</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 HealthConnect. Built with ❤️ for better healthcare access.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/main.js"></script>
+</body>
+</html>

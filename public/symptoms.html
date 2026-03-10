@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HealthConnect Symptom Checker — Describe your symptoms and get matched with the right medical specialist.">
+  <title>Symptom Checker — HealthConnect</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <svg viewBox="0 0 36 36" fill="none"><rect width="36" height="36" rx="10" fill="#6C5CE7"/><path d="M18 8v20M8 18h20" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+        HealthConnect
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/symptoms.html" class="active">Symptom Checker</a>
+        <a href="/doctors.html">Find Doctors</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <a href="/doctors.html" class="btn-nav">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Symptom Checker -->
+  <section class="symptom-page">
+    <div class="container">
+      <div class="symptom-checker">
+
+        <!-- Step Progress -->
+        <div class="step-wizard" id="stepWizard">
+          <div class="step active" id="step1">
+            <span class="step-num">1</span> Add Symptoms
+          </div>
+          <div class="step-line" id="line1"></div>
+          <div class="step" id="step2">
+            <span class="step-num">2</span> Analyzing
+          </div>
+          <div class="step-line" id="line2"></div>
+          <div class="step" id="step3">
+            <span class="step-num">3</span> Results
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="symptom-input-area">
+          <h1>🩺 Symptom Checker</h1>
+          <p>Enter your symptoms below and we'll recommend the right type of specialist for you.</p>
+
+          <div class="symptom-tags" id="symptomTags">
+            <!-- Tags appear here -->
+          </div>
+
+          <div class="symptom-input-row">
+            <input type="text" class="form-control" id="symptomInput" placeholder="Type a symptom and press Enter...">
+            <button class="btn btn-primary" id="addSymptomBtn">Add</button>
+          </div>
+
+          <div class="quick-symptoms">
+            <p>Quick add:</p>
+            <div class="quick-symptom-list">
+              <button class="quick-symptom-btn" data-symptom="fever">Fever</button>
+              <button class="quick-symptom-btn" data-symptom="headache">Headache</button>
+              <button class="quick-symptom-btn" data-symptom="cough">Cough</button>
+              <button class="quick-symptom-btn" data-symptom="chest pain">Chest Pain</button>
+              <button class="quick-symptom-btn" data-symptom="rash">Rash</button>
+              <button class="quick-symptom-btn" data-symptom="joint pain">Joint Pain</button>
+              <button class="quick-symptom-btn" data-symptom="anxiety">Anxiety</button>
+              <button class="quick-symptom-btn" data-symptom="back pain">Back Pain</button>
+              <button class="quick-symptom-btn" data-symptom="ear pain">Ear Pain</button>
+              <button class="quick-symptom-btn" data-symptom="insomnia">Insomnia</button>
+              <button class="quick-symptom-btn" data-symptom="acne">Acne</button>
+              <button class="quick-symptom-btn" data-symptom="migraine">Migraine</button>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; text-align: center;">
+            <button class="btn btn-accent btn-lg" id="checkSymptomsBtn" disabled>🔍 Find Specialist</button>
+          </div>
+        </div>
+
+        <!-- Results Area (hidden by default) -->
+        <div id="symptomResult" style="display: none;"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2026 HealthConnect. Built with ❤️ for better healthcare access.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/symptoms.js"></script>
+</body>
+</html>
